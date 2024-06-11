@@ -1,4 +1,4 @@
-// src/App.tsx
+// App.tsx
 import "./App.css";
 import CaptchaDisplay from "./components/CaptchaDisplay";
 import ClaimForm from "./components/ClaimForm";

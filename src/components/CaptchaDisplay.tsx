@@ -6,12 +6,12 @@ import parse from "html-react-parser";
 import config from "../config";
 
 const CaptchaDisplay = () => {
-  const [captchaSvg, setCaptchaSvg] = useState<string>("");
+  const [captchaSvg, setCaptchaSvg] = useState("");
 
   const fetchCaptcha = async () => {
     try {
       const response = await axios.get(`${config.backend.url}/captcha`, {
-        responseType: "text",
+        responseType: "text"
       });
       setCaptchaSvg(response.data);
     } catch (error) {
@@ -24,7 +24,7 @@ const CaptchaDisplay = () => {
   }, []);
 
   return (
-    <div>
+    <div className="captcha-container">
       {parse(captchaSvg)}
       <button onClick={fetchCaptcha}>Refresh Captcha</button>
     </div>
