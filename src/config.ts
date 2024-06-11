@@ -1,6 +1,8 @@
 const config = {
   backend: {
-    url: process.env.FAUCET_BACKEND_URL || "http://127.0.0.1:8123",
+    url:
+      process.env.FAUCET_BACKEND_URL ||
+      "http://catnet-faucet.btcwild.life:8123",
   },
 };
 
