@@ -2,7 +2,7 @@ const config = {
   backend: {
     url:
       process.env.FAUCET_BACKEND_URL ||
-      "http://catnet-faucet.btcwild.life:8123",
+      "https://catnet-faucet.btcwild.life/api",
   },
 };
 
