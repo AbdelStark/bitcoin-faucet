@@ -1,7 +1,8 @@
-// App.tsx
+// src/App.tsx
 import "./App.css";
 import CaptchaDisplay from "./components/CaptchaDisplay";
 import ClaimForm from "./components/ClaimForm";
+import TestWalletGenerator from "./components/TestWalletGenerator";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <h1>Catnet Faucet</h1>
         <CaptchaDisplay />
         <ClaimForm />
+        <TestWalletGenerator />
       </header>
     </div>
   );

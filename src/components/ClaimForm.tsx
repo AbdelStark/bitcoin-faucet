@@ -17,20 +17,41 @@ const ClaimForm = () => {
       const response = await axios.get(url);
       setMessage(`Success: ${response.data}`);
     } catch (error: any) {
-      const message = error.response?.data?.message || "An unexpected error occurred";
+      const message =
+        error.response?.data?.message || "An unexpected error occurred";
       setMessage(`Error: ${message}`);
     }
   };
 
   return (
     <form onSubmit={handleClaim}>
-      <input type="text" value={address} onChange={e => setAddress(e.target.value)} placeholder="Bitcoin Address" required />
-      <input type="number" value={amount} onChange={e => setAmount(e.target.value)} min="0.001" max="0.1" step="0.001" required />
-      <input type="text" value={captcha} onChange={e => setCaptcha(e.target.value)} placeholder="Enter Captcha" required />
+      <input
+        type="text"
+        value={address}
+        onChange={(e) => setAddress(e.target.value)}
+        placeholder="Bitcoin Address"
+        required
+      />
+      <input
+        type="number"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+        min="0.001"
+        max="0.1"
+        step="0.001"
+        required
+      />
+      <input
+        type="text"
+        value={captcha}
+        onChange={(e) => setCaptcha(e.target.value)}
+        placeholder="Enter Captcha"
+        required
+      />
       <button type="submit">Claim Bitcoin</button>
       <p>{message}</p>
     </form>
-      );
+  );
 };
 
 export default ClaimForm;

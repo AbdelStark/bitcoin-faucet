@@ -3,7 +3,7 @@
   text-align: center;
   background-color: #0c0c0c; /* Dark background typical of old terminals */
   color: #33ff33; /* Classic green terminal text */
-  font-family: 'Courier New', Courier, monospace; /* Monospace font for that classic look */
+  font-family: "Courier New", Courier, monospace; /* Monospace font for that classic look */
 }
 
 .App-header {
@@ -16,7 +16,8 @@
 }
 
 /* Retro effect for headings and links */
-h1, .App-link {
+h1,
+.App-link {
   text-shadow: 0 0 5px rgba(51, 255, 51, 0.8);
 }
 
@@ -26,7 +27,7 @@ button {
   border: 1px solid #33ff33;
   padding: 8px 16px;
   text-transform: uppercase;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }

@@ -11,7 +11,7 @@ const CaptchaDisplay = () => {
   const fetchCaptcha = async () => {
     try {
       const response = await axios.get(`${config.backend.url}/captcha`, {
-        responseType: "text"
+        responseType: "text",
       });
       setCaptchaSvg(response.data);
     } catch (error) {
