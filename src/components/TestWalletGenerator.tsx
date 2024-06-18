@@ -1,7 +1,7 @@
 // src/components/TestWalletGenerator.tsx
 import { useState } from "react";
 import * as bitcoinjs from "bitcoinjs-lib";
-import * as ecc from "tiny-secp256k1";
+import ecc from "@bitcoinerlab/secp256k1";
 import ECPairFactory from "ecpair";
 
 const ECPair = ECPairFactory(ecc);
