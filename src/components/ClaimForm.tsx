@@ -4,8 +4,13 @@ import axios from "axios";
 
 import config from "../config";
 
-const ClaimForm = () => {
-  const [address, setAddress] = useState("");
+const ClaimForm = ({
+  address,
+  setAddress,
+}: {
+  address: string;
+  setAddress: (address: string) => void;
+}) => {
   const [amount, setAmount] = useState("0.001");
   const [captcha, setCaptcha] = useState("");
   const [message, setMessage] = useState("");

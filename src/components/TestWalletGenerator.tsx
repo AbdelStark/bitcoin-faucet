@@ -8,7 +8,11 @@ const ECPair = ECPairFactory(ecc);
 
 const CATNET_NETWORK = bitcoinjs.networks.testnet;
 
-const TestWalletGenerator = () => {
+const TestWalletGenerator = ({
+  setAddress,
+}: {
+  setAddress: (address: string) => void;
+}) => {
   const [wallet, setWallet] = useState({
     publicKey: "",
     privateKey: "",
@@ -22,12 +26,15 @@ const TestWalletGenerator = () => {
       network: CATNET_NETWORK,
     });
     const publicKey = keypair.publicKey.toString("hex");
-    const privateKey = keypair.privateKey ? keypair.privateKey.toString("hex") : "";
+    const privateKey = keypair.privateKey
+      ? keypair.privateKey.toString("hex")
+      : "";
 
     if (address) {
       setWallet({ publicKey, privateKey, address });
+      setAddress(address);
     } else {
-      console.error('Failed to generate address');
+      console.error("Failed to generate address");
     }
   };
 
@@ -38,11 +45,19 @@ const TestWalletGenerator = () => {
       </button>
       {wallet.address && (
         <div>
-          <p><strong>Public Key:</strong> {wallet.publicKey}</p>
-          <p><strong>Private Key:</strong> {wallet.privateKey}</p>
-          <p><strong>Address:</strong> {wallet.address}</p>
+          <p>
+            <strong>Public Key:</strong> {wallet.publicKey}
+          </p>
+          <p>
+            <strong>Private Key:</strong> {wallet.privateKey}
+          </p>
+          <p>
+            <strong>Address:</strong> {wallet.address}
+          </p>
           <p className="warning">
-            Do not use these for any non-test environment! They are generated locally on your browser but they are not secure and might incur losses if used on a mainnet environment.
+            Do not use these for any non-test environment! They are generated
+            locally on your browser but they are not secure and might incur
+            losses if used on a mainnet environment.
           </p>
         </div>
       )}
